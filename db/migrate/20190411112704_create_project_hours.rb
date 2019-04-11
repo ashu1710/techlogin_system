@@ -1,0 +1,10 @@
+class CreateProjectHours < ActiveRecord::Migration[5.2]
+  def change
+    create_table :project_hours do |t|
+      t.integer :hour
+      t.references :project, foreign_key: true
+
+      t.timestamps
+    end
+  end
+end

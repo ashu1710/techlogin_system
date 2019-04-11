@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  descript: MyString
+  project_status: 1
+  total_hour_work: 1.5
+  project_url: MyString
+  start_date: 2019-04-11
+  project_type: one
+
+two:
+  name: MyString
+  descript: MyString
+  project_status: 1
+  total_hour_work: 1.5
+  project_url: MyString
+  start_date: 2019-04-11
+  project_type: two

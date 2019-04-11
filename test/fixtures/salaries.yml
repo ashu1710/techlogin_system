@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  total_leaves: 1.5
+  working_days: 1
+  salary: 1
+  daily_salary: 1.5
+  hour_salary: 1.5
+  unpaid_leave: 1.5
+  user: one
+
+two:
+  total_leaves: 1.5
+  working_days: 1
+  salary: 1
+  daily_salary: 1.5
+  hour_salary: 1.5
+  unpaid_leave: 1.5
+  user: two

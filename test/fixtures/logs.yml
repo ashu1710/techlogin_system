@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ipaddress1: MyString
+  message: MyString
+  time_diff: MyString
+  no_of_sec: 1
+  system_generated: false
+  user: one
+  project: one
+  event: one
+
+two:
+  ipaddress1: MyString
+  message: MyString
+  time_diff: MyString
+  no_of_sec: 1
+  system_generated: false
+  user: two
+  project: two
+  event: two

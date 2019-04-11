@@ -1,4 +1,3 @@
-
 # PostgreSQL. Versions 9.1 and up are supported.
 #
 # Install the pg driver:
@@ -25,7 +24,7 @@ default: &default
 development:
   <<: *default
   database: techlogin_system_development
-  #Urmi Soni
+ 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  role: 1
+  add_edit_assign_task: false
+  delete_assign_task: false
+  project_role: one
+  project: one
+  user: one
+
+two:
+  role: 1
+  add_edit_assign_task: false
+  delete_assign_task: false
+  project_role: two
+  project: two
+  user: two

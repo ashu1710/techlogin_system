@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  apply_date: 2019-04-11
+  reason: MyString
+  leave_status_id: 1
+  response: MyString
+  no_of_days: 1.5
+  respond_by: MyString
+  leave_type_id: 1
+  leave_request: MyString
+  is_system_generated: false
+  user: one
+
+two:
+  apply_date: 2019-04-11
+  reason: MyString
+  leave_status_id: 1
+  response: MyString
+  no_of_days: 1.5
+  respond_by: MyString
+  leave_type_id: 1
+  leave_request: MyString
+  is_system_generated: false
+  user: two
