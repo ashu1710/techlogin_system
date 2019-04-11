@@ -1,0 +1,109 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-1">
+        </div>
+
+        <div class="col-md-10 formbgcolorlogin" style="margin-top: 10px;">
+
+            <h2 style="margin-top:10px;">Sign up</h2>
+
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+            
+            <div class="row">
+                <div class="col-md-6">
+
+                    <div class="field form-group">
+                        <%= f.label :email %><br />
+                        <%= f.email_field :email,class: 'form-control', autofocus: true, autocomplete: "email" %>
+                    </div>
+
+                    <div class="field form-group">
+                        <%= f.label :name %><br />
+                        <%= f.text_field :name,class: 'form-control' %>
+                    </div>
+
+
+                    <div class="field form-group">
+                        <%= f.label :role %><br />
+                        <%= f.text_field :role, class: 'form-control' %>
+                    </div>
+
+
+                    
+                    <div class="field form-group">
+                        <%= f.label :in_time %><br />
+                        <%= f.text_field :in_time, class: 'form-control' %>
+                    </div>
+
+
+                    <div class="field form-group">
+                        <%= f.label :dob %><br />
+                        <%= f.date_field :dob, class: 'form-control' %>
+                    </div>
+                
+                </div>
+
+                <div class="col-md-6">
+
+                        <div class="field form-group">
+                            <%= f.label :salary %><br />
+                            <%= f.text_field :salary,class: 'form-control' %>
+                        </div>
+
+
+                        <div class="field form-group">
+                            <%= f.label :sick_leave %><br/>
+                            <%= f.text_field :sl,class: 'form-control' %>
+                        </div>
+
+
+                        <div class="field form-group">
+                            <%= f.label :casual_leave %><br />
+                            <%= f.text_field :cl,class: 'form-control' %>
+                        </div> 
+
+                        <div class="field form-group">
+                            <%= f.label :password %>
+                            <% if @minimum_password_length %>
+                            <em>(<%= @minimum_password_length %> characters minimum)</em>
+                            <% end %><br />
+                            <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+                        </div>
+
+                        <div class="field form-group">
+                            <%= f.label :password_confirmation %><br />
+                            <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
+                        </div>
+
+                        <div class="actions">
+                            <%= f.submit "Sign up", class: 'btn btn-success' %>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+
+
+        </div>
+
+
+        <div class="col-md-1">
+        </div>
+
+
+
+        <div class="col-md-4">
+                
+        </div>
+
+
+        <div class="col-md-4 forget-password-font-size">
+            <%= render "devise/shared/links" %>
+        </div>
+
+
+        <div class="col-md-4">
+        </div>
+
+    </div>
+</div>
