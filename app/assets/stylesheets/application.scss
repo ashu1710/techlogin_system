@@ -24,10 +24,23 @@
 .for-bgcolor-after-login-menu{
     background-color: #331400 !important;
 }
+
+.font-hover-menu a:hover
+{
+    color: white;
+}
+.dropdown-menu a:hover
+{
+    color: black;
+}
+li:last-child
+{
+    position:absolute;right:20px;
+    float:right;
+}
 .for-a-tag-in-menu
 {
     color:white;
-    font-weight: bold;
 }
 body
 {

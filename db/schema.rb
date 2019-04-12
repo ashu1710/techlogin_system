@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_120424) do
+ActiveRecord::Schema.define(version: 2019_04_12_060704) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -260,10 +260,9 @@ ActiveRecord::Schema.define(version: 2019_04_11_120424) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.string "role"
     t.string "in_time"
     t.date "dob"
-    t.integer "salary"
+    t.string "salary"
     t.integer "sl"
     t.integer "cl"
     t.datetime "created_at", null: false
@@ -271,8 +270,10 @@ ActiveRecord::Schema.define(version: 2019_04_11_120424) do
     t.date "joindate"
     t.boolean "login"
     t.integer "working_hours"
+    t.bigint "user_role_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["user_role_id"], name: "index_users_on_user_role_id"
   end
 
   add_foreign_key "comments", "projects"
@@ -299,4 +300,5 @@ ActiveRecord::Schema.define(version: 2019_04_11_120424) do
   add_foreign_key "task_times", "users"
   add_foreign_key "tasks", "projects"
   add_foreign_key "tasks", "users"
+  add_foreign_key "users", "user_roles"
 end
