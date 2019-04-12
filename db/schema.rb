@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_12_060704) do
+ActiveRecord::Schema.define(version: 2019_04_12_065140) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -152,8 +152,8 @@ ActiveRecord::Schema.define(version: 2019_04_12_060704) do
 
   create_table "project_roles", force: :cascade do |t|
     t.string "name"
-    t.boolean "receive_eod_mail"
-    t.boolean "can_view_eod"
+    t.boolean "receive_eod_mail", default: false
+    t.boolean "can_view_eod", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
