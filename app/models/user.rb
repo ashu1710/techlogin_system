@@ -16,5 +16,8 @@ class User < ApplicationRecord
         has_many :eod_performances, dependent: :destroy
         has_many :histories, dependent: :destroy
         has_many :events, dependent: :destroy
+
+
+        has_one_attached :avatar
         
 end

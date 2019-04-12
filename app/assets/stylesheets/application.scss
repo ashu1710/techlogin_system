@@ -33,7 +33,46 @@
 {
     color: black;
 }
-li:last-child
+.thumbnil
+{
+    box-shadow: 0 1px 2px rgba(0,0,0,0.075);
+    height:150px;
+    width:150px;
+    border-radius: 50%;
+    margin-top: 10px; 
+}
+.table-color-userprofile-project
+{
+     font-weight: bold; 
+}
+.table-color-userprofile-project td
+{
+    padding: 0.30rem;
+}
+.hide-text
+{
+    display: none;
+}
+.show-text
+{
+    display: block;
+}
+.red-color
+{
+    color: red;
+}
+.get-margin
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-for-user-edit label
+{
+    text-align: right;
+    font-weight: bolder;
+}
+.font-hover-menu li:last-child
 {
     position:absolute;right:20px;
     float:right;
@@ -45,6 +84,7 @@ li:last-child
 body
 {
     background: #e9e9e9 url(/assets/bg.png) repeat 0 0;
+    font: 17px/1.7em 'Open Sans';
 }
 .formbgcolorlogin
 {

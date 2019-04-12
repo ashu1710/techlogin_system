@@ -15,6 +15,9 @@
 
   <!-- Links -->
   <ul class="navbar-nav font-hover-menu">
+    <li class="nav-item">
+        <%= link_to  "Tech Login", root_path, class: 'navbar-brand upcase', style: 'color:white;' %>
+    </li>
 
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle for-a-tag-in-menu" href="#" id="navbardrop" data-toggle="dropdown">
@@ -104,8 +107,8 @@
         <%= current_user.name %>
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">My Profile</a>
-        <a class="dropdown-item" href="#">Holiday</a>
+        <%= link_to "My Profile",  edit_user_registration_path , class: 'dropdown-item'%>
+        <%= link_to  "Holiday", holidays_path, class: 'dropdown-item' %>
         <a class="dropdown-item" href="#">Leaves</a>
         <%= link_to "Logout", destroy_user_session_path, method: :delete,class: 'dropdown-item' %>
       </div>
@@ -122,15 +125,25 @@
     <div class="forbgcolorlogin">
 			<div class="container">
 				<div class="navbar-header">
-  				<a class="navbar-brand upcase" style="color:white;" href="/">Tech Login</a>
-        
-          </div>
-			</div>
+                <%= link_to  "Tech Login", root_path, class: 'navbar-brand upcase', style: 'color:white;' %>
+                </div>
+		    </div>
     </div>
     <% end %>
 
+<% if notice %>
+  <div class="alert alert-success">
     <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+  </div>
+<% end %>
+
+<% if notice %>
+  <div class="alert alert-success">
+    <p class="alert"><%= alert %>
+  </div>
+<% end %>
+    
+  
     <%= yield %>
   </body>
 </html>

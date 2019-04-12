@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row get-margin">
+        <div class="col-md-7">
+            <table class="table table-bordered table-hover table-striped table-color-userprofile-project" id="holiday_tbl">   
+                <tr>
+                    <td>Name</td>
+                    <td>Holiday Date</td>
+                    <td>Holiday Type</td>
+                    <td>Action</td>
+                </tr>
+
+                <tbody>
+                    <%= render partial: "holiday", collection: @holidays, as: :holiday  %>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-1">
+
+        </div>
+        <div class="col-md-4">
+            <%= form_for( @holiday , remote: true) do |f| %>
+                <div class="form-group">
+                    <%= f.label :holiday_name %>
+                    <%= f.text_field :name,class: 'form-control' %>
+                </div>
+                
+                <div class="form-group">                    
+                    <%= f.label :holiday_type %>
+                    <%= f.select :holiday_type, options_for_select([['Select Holiday Type',''],'Nation Holiday', 'Official Holiday']),{}, class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.label :holiday_date %>
+                    <%= f.date_field :holiday_date,class: 'form-control' %>
+                </div>
+
+                <div class="form-group">
+                    <%= f.submit "Add",class: 'btn btn-success' %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

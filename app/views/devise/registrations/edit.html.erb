@@ -1,43 +1,161 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div class="container" style="background-color:white;">
+    <ul class="nav nav-tabs">
+        <li>
+            <a class="nav-link active" data-toggle="tab" href="#Profile" >Profile</a>
+        </li>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#Setting">Setting</a>
+        </li>
+        
+        <li>
+            <a class="nav-link" data-toggle="tab" href="#Projects">Projects</a>
+        </li>
+    </ul>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="row">
+        <div class="col-md-8">
+        <div class="tab-content">
+            <div id="Profile" class="tab-pane active">
+                <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put ,class: 'form-for-user-edit'}) do |f| %>
+                    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+                    <div class="form-group">
+                    <div class="row">
+                            <label class= "col-md-4"></label>
+                            <% if current_user.avatar.attached? %>
+                                <div class="col-md-8">
+                                    <%= image_tag  url_for(current_user.avatar), class: 'thumbnil' %>
+                                </div>
+                            <% else %>
+                                <div class="col-md-8">
+                                    <%= image_tag  "no-profile.jpg", class: 'thumbnil' %>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
-    <% end %>
-  </div>
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :email,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                <%= current_user.email %>
+                                <p style="font-size: 12px;">Your email is for logging in and cannot be changed.</p>
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :Date_of_birth,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                <%= f.date_field :dob, class: 'form-control',value: @current_user.dob %> 
+                            </div>
+                        </div>
+                    </div>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
 
-<h3>Cancel my account</h3>
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :full_name,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                <%= f.text_field :name,class: 'form-control',value: @current_user.name %>
+                            </div>
+                        </div>
+                    </div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :profile,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                <%= f.file_field :avatar %>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                    <% end %>
+
+
+                    <hr>
+
+                    <p>Leave these fields blank if you don't want to change your password.</p>
+
+
+
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :password,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                  <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :password_confirmation,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                  <%= f.password_field :password_confirmation, autocomplete: "new-password",class: 'form-control' %>      
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <p>You must enter your current password to make changes.</p>
+
+                    <div class="field form-group">
+                        <div class="row">
+                            <%= f.label :current_password,class: "col-md-4" %>
+                            <div class="col-md-8">
+                                <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control', required: true %>     
+                                <p class="hide-text red-color">current password is required</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="action form-group">
+                        <div class="row">
+                            <label class="col-md-4"></label>
+                            <div class="col-md-8">
+                                <%= f.submit "Update Profile", class: 'btn btn-success' %>
+                                <%= link_to "Cancel", root_path ,class: 'btn btn-light' %>
+                            </div>
+                        </div>
+                    </div>
+                    
+                <% end %>
+            </div>
+
+            <div id="Setting" class="tab-pane get-margin">
+                <label>Your In Time </label> <%= current_user.in_time %>
+            </div>
+
+            <div id="Projects" class="tab-pane get-margin">
+                <table class="table table-bordered table-hover table-striped table-color-userprofile-project">
+                    <tr>
+                        <td>Name</td>
+                        <td>Role</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-4">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
