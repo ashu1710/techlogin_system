@@ -8,7 +8,9 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+  <% end %>
   <body>
     <% if user_signed_in? %>
       <nav class="navbar navbar-expand-sm bg-light for-bgcolor-after-login-menu">
@@ -80,8 +82,8 @@
         Setting
       </a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Project Type</a>
-        <a class="dropdown-item" href="#">Project Role</a>
+        <a class="dropdown-item" href="<%= project_types_path %>">Project Type</a>
+        <a class="dropdown-item" href="<%= project_roles_path %>">Project Role</a>
         <a class="dropdown-item" href="#">Task Type</a>
       </div>
     </li>

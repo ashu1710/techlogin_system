@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 card bg-light ptshadow">
+      <div class="card-head">
+        <h4 class="ml-2 mt-3">Project Type</h4>
+      </div>
+      <div class="card-body">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @project_types.each do |project_type| %>
+               <tr>
+                 <td><%= project_type.name %></td>
+                 <td><%= link_to fa_icon('trash', style: 'color: red'), project_type, method: :delete, data: { confirm: 'Are you sure?' }%>
+                 <%= link_to fa_icon('pencil', style: 'color: black'), edit_project_type_path(project_type) %></td>
+               </tr>
+            <% end%>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="col-md-1"></div>
+
+    <div class="col-md-5 card bg-light ptshadow">
+      <div class="card-head">
+        <h4 class="ml-2 mt-3">Project Type</h4>
+      </div>
+      <div class="card-body">
+        <%= render 'form' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -26,7 +26,7 @@
 
                     <div class="field form-group">
                         <%= f.label :role %><br />
-                        <%= f.text_field :user_role_id, class: 'form-control' %>
+                        <%= f.select :user_role_id,options_for_select(UserRole.all.map { |user_role| [user_role.name, user_role.id] }),{}, {class:'form-control'} %>
                     </div>
 
 
